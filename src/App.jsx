@@ -1,10 +1,13 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 // Այն ժամանակ կար Switch component հիմա դրա փոխարեն Routes-նա
 
 import { Homepage } from "./pages/Homepage";
 import { About } from "./pages/Aboutpage";
 import { Blogpage } from "./pages/Blogpage";
 import { Contact } from "./pages/Contact";
+import { Createpost } from "./pages/Createpost";
+import { Editpost } from "./pages/Editpost";
+import { Singlepage } from "./pages/Singlepage";
 import { Notfoundpage } from "./pages/Notfoundpage";
 
 import { Layout } from "./components/Layout";
@@ -21,6 +24,13 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="posts" element={<Blogpage />} />
           <Route path="contact" element={<Contact />} />
+
+          {/* <Route path="posts/:id/:category/:title" element={<Singlepage />} /> */}
+          {/* posts/:id - սենց կետով փոխանցում ենք useParams {id: "id"}*/}
+          <Route path="posts/:id" element={<Singlepage />} />
+          <Route path="posts/new/" element={<Createpost />} />
+          <Route path="posts/:id/edit" element={<Editpost />} />
+
           {/* "*"-դնելով հասկացնում ենք մնացած դեպքերում  */}
           <Route path="*" element={<Notfoundpage />} />
         </Route>

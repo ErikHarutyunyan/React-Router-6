@@ -1,4 +1,4 @@
-import { NavLink, Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 // Outlet - նրա համարա որ մեր разметкин ասենք թե որտեղ դնեք բոլոր մնացածը
 import { CustomLink } from "./CustomLink";
 
@@ -26,9 +26,7 @@ const Layout = () => {
         {/* Link դնում ենք a-ի տեղը, href-ի տեղը դնում ենք to */}
         {/* <Link to="/contact">Contact</Link> */}
 
-        <CustomLink to="/contact">
-          Contact
-        </CustomLink>
+        <CustomLink to="/contact">Contact</CustomLink>
       </header>
 
       <main className="container">
