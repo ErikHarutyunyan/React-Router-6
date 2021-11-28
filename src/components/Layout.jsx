@@ -1,13 +1,34 @@
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Link, Outlet } from "react-router-dom";
 // Outlet - նրա համարա որ մեր разметкин ասենք թե որտեղ դնեք բոլոր մնացածը
+import { CustomLink } from "./CustomLink";
+
+// isActive - ստուգում ենք ակտիվա թե չէ, հա ավելացնում ենք active-link չէ ""
+const setActive = ({ isActive }) => (isActive ? "active-link" : "");
 
 const Layout = () => {
   return (
     <>
       <header>
-        <Link to="/">Home</Link>
-        <Link to="/posts">Blog</Link>
-        <Link to="/about">About</Link>
+        {/*  NavLink ավելացնումա tag-ի class="active" */}
+        <NavLink to="/">Home</NavLink>
+        {/* className ընդունումա setActive - ֆունկցյաի վերադրձրածը */}
+        <NavLink to="/posts" className={setActive}>
+          Blog
+        </NavLink>
+        {/* Ստուգում ենք եթե active-ա միանգամից տալիս եմ style -  */}
+        <NavLink
+          to="/about"
+          style={({ isActive }) => ({
+            color: isActive ? "var(--color-active)" : "white"
+          })}>
+          About
+        </NavLink>
+        {/* Link դնում ենք a-ի տեղը, href-ի տեղը դնում ենք to */}
+        {/* <Link to="/contact">Contact</Link> */}
+
+        <CustomLink to="/contact">
+          Contact
+        </CustomLink>
       </header>
 
       <main className="container">

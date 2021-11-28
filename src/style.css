@@ -71,3 +71,7 @@ footer div {
   justify-content: center;
   color: #fff;
 }
+
+header > a.active {
+  color: var(--color-active);
+}

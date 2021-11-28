@@ -14,12 +14,14 @@ function App() {
   return (
     <>
       <Routes>
+        {/*  path-հասցե, element-ինչը ցույց տա*/}
         <Route path="/" element={<Layout />}>
           <Route index element={<Homepage />} />
           {/* index տալով հասկացնում ենք որ ինքը  path="/" */}
           <Route path="about" element={<About />} />
           <Route path="posts" element={<Blogpage />} />
           <Route path="contact" element={<Contact />} />
+          {/* "*"-դնելով հասկացնում ենք մնացած դեպքերում  */}
           <Route path="*" element={<Notfoundpage />} />
         </Route>
       </Routes>
