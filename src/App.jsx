@@ -25,7 +25,12 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Homepage />} />
           {/* index տալով հասկացնում ենք որ ինքը  path="/" */}
-          <Route path="about" element={<About />} />
+          <Route path="about" element={<About />}>
+            {/* about ծնողի մեջի  Route path լինեւմ են default about
+                օրինակ՝ path="contacts" == about/contacts*/}
+            <Route path="contacts" element={<p>Our Contacts</p>} />
+            <Route path="team" element={<p>Our Team</p>} />
+          </Route>
           {/* 
               Ридирект
               Սենց կարանք տանք path որը կգննա նույն element-ը
